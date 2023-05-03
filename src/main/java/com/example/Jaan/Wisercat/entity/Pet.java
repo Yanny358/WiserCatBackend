@@ -1,8 +1,5 @@
 package com.example.Jaan.Wisercat.entity;
 
-import com.example.Jaan.Wisercat.entity.petEnums.PetFurColor;
-import com.example.Jaan.Wisercat.entity.petEnums.PetOriginCountry;
-import com.example.Jaan.Wisercat.entity.petEnums.PetType;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,7 +14,7 @@ import jakarta.validation.constraints.NotNull;
 public class Pet {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
     private Integer id;
 
@@ -29,15 +26,18 @@ public class Pet {
     @NotNull
     private String code;
 
-    @Column
-    @Enumerated(EnumType.STRING)
+    @NotNull
+    @ManyToOne
+    @JoinColumn(name = "colors_id")
+    private PetColor petColor;
+
+    @NotNull
+    @ManyToOne
+    @JoinColumn(name = "types_id")
     private PetType petType;
 
-    @Column
-    @Enumerated(EnumType.STRING)
-    private PetFurColor petFurColor;
-
-    @Column
-    @Enumerated(EnumType.STRING)
-    private PetOriginCountry petOriginCountry;
+    @NotNull
+    @ManyToOne
+    @JoinColumn(name = "countries_id")
+    private PetCountry petCountry;
 }

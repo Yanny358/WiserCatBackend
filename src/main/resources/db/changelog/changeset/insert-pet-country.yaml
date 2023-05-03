@@ -1,0 +1,59 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-pet-country
+      author: Jaan
+      changes:
+        - insert:
+            tableName: countries
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: country
+                  value: "Estonia"
+        - insert:
+            tableName: countries
+            columns:
+              - column:
+                  name: id
+                  value: 2
+              - column:
+                  name: country
+                  value: "Latvia"
+        - insert:
+            tableName: countries
+            columns:
+              - column:
+                  name: id
+                  value: 3
+              - column:
+                  name: country
+                  value: "Lithuania"
+        - insert:
+            tableName: countries
+            columns:
+              - column:
+                  name: id
+                  value: 4
+              - column:
+                  name: country
+                  value: "Finland"
+        - insert:
+            tableName: countries
+            columns:
+              - column:
+                  name: id
+                  value: 5
+              - column:
+                  name: country
+                  value: "Sweden"
+        - insert:
+            tableName: countries
+            columns:
+              - column:
+                  name: id
+                  value: 6
+              - column:
+                  name: country
+                  value: "Norway"

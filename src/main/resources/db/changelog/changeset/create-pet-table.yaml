@@ -1,0 +1,46 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-pet
+      author: Jaan
+      changes:
+        - createTable:
+            tableName: pets
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: code
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: colors_id
+                  type: int
+                  constraints:
+                    foreignKeyName: colorsFK
+                    referencedTableName: colors
+                    referencedColumnNames: id
+              - column:
+                  name: countries_id
+                  type: int
+                  constraints:
+                    foreignKeyName: countriesFK
+                    referencedTableName: countries
+                    referencedColumnNames: id
+              - column:
+                  name: types_id
+                  type: int
+                  constraints:
+                    foreignKeyName: typesFK
+                    referencedTableName: types
+                    referencedColumnNames: id

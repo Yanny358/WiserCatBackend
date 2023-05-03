@@ -1,11 +1,11 @@
 package com.example.Jaan.Wisercat.service;
 
-import com.example.Jaan.Wisercat.dto.PetDto;
+import com.example.Jaan.Wisercat.dto.PetDtoIn;
+import com.example.Jaan.Wisercat.dto.PetDtoOut;
 import com.example.Jaan.Wisercat.entity.Pet;
 import com.example.Jaan.Wisercat.mapper.Mapper;
 import com.example.Jaan.Wisercat.repository.PetRepository;
 
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,13 +17,16 @@ public class PetService {
     @Autowired
     private PetRepository petRepository;
 
-    public List<PetDto> getPets() {
-        ModelMapper modelMapper = Mapper.getMapper();
-        return petRepository.findAll().stream().map(book -> modelMapper.map(book, PetDto.class)).toList();
+    @Autowired
+    private Mapper mapper;
+
+    public List<PetDtoOut> getPets() {
+        List<Pet> pet = petRepository.findAll();
+       return mapper.entityToDtos(pet);
     }
 
-    public Integer savePet(PetDto petDto) {
-        ModelMapper modelMapper = Mapper.getMapper();
-        return petRepository.save(modelMapper.map(petDto, Pet.class)).getId();
+    public void savePet(PetDtoIn petDtoIn) {
+        Pet pet = mapper.dtoToEntity(petDtoIn);
+        petRepository.save(pet);
     }
 }

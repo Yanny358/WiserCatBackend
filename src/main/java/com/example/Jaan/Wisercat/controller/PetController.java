@@ -1,6 +1,7 @@
 package com.example.Jaan.Wisercat.controller;
 
-import com.example.Jaan.Wisercat.dto.PetDto;
+import com.example.Jaan.Wisercat.dto.PetDtoIn;
+import com.example.Jaan.Wisercat.dto.PetDtoOut;
 import com.example.Jaan.Wisercat.service.PetService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,12 +18,12 @@ public class PetController {
     private PetService petService;
 
     @GetMapping(value = "getPets")
-    public ResponseEntity<List<PetDto>> getPets() {
+    public ResponseEntity<List<PetDtoOut>> getPets() {
         return ResponseEntity.ok(petService.getPets());
     }
 
     @PostMapping(value = "savePet")
-    public ResponseEntity<String> savePet(@RequestBody  @Valid PetDto petDto) {
-        return ResponseEntity.ok(String.valueOf(petService.savePet(petDto)));
+    public void savePet(@RequestBody  @Valid PetDtoIn petDtoIn) {
+        petService.savePet(petDtoIn);
     }
 }
