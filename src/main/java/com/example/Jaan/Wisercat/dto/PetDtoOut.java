@@ -20,9 +20,11 @@ public class PetDtoOut implements Serializable {
 
     private  Integer petColorId;
     private  String petColor;
-    private  Integer petTypeId;
-    private  String petType;
+
     private  Integer petCountryId;
     private  String petCountry;
+
+    private  Integer petTypeId;
+    private  String petType;
 
 }
