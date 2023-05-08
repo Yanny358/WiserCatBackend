@@ -4,6 +4,7 @@ Kuidas käivitada?
 - Git clone see repo ja IDE's vali pom.xml
 - Kõigepealt on vaja backendi tõsta, selleks kaustas src/main/com.example.Jaan.Wisercat käivitada WisercatApplication,
     right click `Run WisercatApplication main()`.
+- Frontend asub siin https://github.com/Yanny358/WiserCatFrontend
 - Et tõsta frontendi põhikaustas WiserCatFrontend terminalis panna `ng serve`. NB! on vaja Angular CLI installitud.
 - App tootab locaalselt port on 4200 (http://localhost:4200/).
 - Kasutajad on test1, test2, test3 parool on üks `qwerty`. Igal kasutajal on üks loom.
