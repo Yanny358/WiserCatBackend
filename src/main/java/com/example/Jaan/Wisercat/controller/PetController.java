@@ -26,4 +26,16 @@ public class PetController {
     public void savePet(@RequestBody  @Valid PetDtoIn petDtoIn) {
         petService.savePet(petDtoIn);
     }
+    @PutMapping(value = "updatePet")
+    public void updatePet(@RequestBody PetDtoIn petDtoIn){
+        petService.updatePet(petDtoIn);
+    }
+    @GetMapping(value = "singlePet")
+    public PetDtoOut getSinglePet(@RequestParam String petCode){
+        return petService.getSinglePet(petCode);
+    }
+    @GetMapping(value = "userPet")
+    public List<PetDtoOut> getUserPets(@RequestParam Integer userId){
+        return petService.getUserPets(userId);
+    }
 }

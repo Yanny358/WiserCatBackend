@@ -40,4 +40,9 @@ public class Pet {
     @ManyToOne
     @JoinColumn(name = "countries_id")
     private PetCountry petCountry;
+
+    @NotNull
+    @ManyToOne
+    @JoinColumn(name = "users_id")
+    private User user;
 }

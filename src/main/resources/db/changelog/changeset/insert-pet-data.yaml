@@ -24,6 +24,9 @@ databaseChangeLog:
               - column:
                   name: countries_id
                   value: 1
+              - column:
+                  name: users_id
+                  value: 2147483643
         - insert:
             tableName: pets
             columns:
@@ -45,6 +48,9 @@ databaseChangeLog:
               - column:
                   name: countries_id
                   value: 2
+              - column:
+                  name: users_id
+                  value: 2147483644
         - insert:
             tableName: pets
             columns:
@@ -66,3 +72,6 @@ databaseChangeLog:
               - column:
                   name: countries_id
                   value: 6
+              - column:
+                  name: users_id
+                  value: 2147483645

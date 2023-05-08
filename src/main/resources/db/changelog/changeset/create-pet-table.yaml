@@ -44,3 +44,10 @@ databaseChangeLog:
                     foreignKeyName: typesFK
                     referencedTableName: types
                     referencedColumnNames: id
+              - column:
+                  name: users_id
+                  type: int
+                  constraints:
+                    foreignKeyName: usersFK
+                    referencedTableName: users
+                    referencedColumnNames: id

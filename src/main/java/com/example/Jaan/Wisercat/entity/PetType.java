@@ -12,7 +12,7 @@ import lombok.Setter;
 public class PetType {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
     private Integer id;
 

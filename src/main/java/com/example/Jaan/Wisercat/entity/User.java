@@ -6,17 +6,21 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "countries")
+@Table(name = "users")
 @Getter
 @Setter
-public class PetCountry {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
     private Integer id;
 
-    @NotNull
     @Column
-    private String country;
+    @NotNull
+    private String username;
+
+    @Column
+    @NotNull
+    private String password;
 }

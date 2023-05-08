@@ -27,4 +27,6 @@ public class PetDtoOut implements Serializable {
     private  Integer petTypeId;
     private  String petType;
 
+    private Integer userId;
+
 }

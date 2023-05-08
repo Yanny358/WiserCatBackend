@@ -29,4 +29,23 @@ public class PetService {
         Pet pet = mapper.dtoToEntity(petDtoIn);
         petRepository.save(pet);
     }
+
+    public void updatePet(PetDtoIn petDtoIn){
+        Pet pet = mapper.dtoToEntity(petDtoIn);
+        petRepository.updatePetByCode(pet.getName(),
+                pet.getPetColor(),
+                pet.getPetCountry(),
+                pet.getPetType(),
+                pet.getCode());
+    }
+
+    public PetDtoOut getSinglePet(String petCode) {
+        Pet pet =  petRepository.findPetByCode(petCode);
+        return mapper.entityToDto(pet);
+    }
+
+    public List<PetDtoOut> getUserPets(Integer userId) {
+        List<Pet> pet = petRepository.findByUserId(userId);
+        return mapper.entityToDtos(pet);
+    }
 }

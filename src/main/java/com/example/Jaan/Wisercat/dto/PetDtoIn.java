@@ -22,4 +22,5 @@ public class PetDtoIn implements Serializable {
     private Integer petColorId;
     private Integer petTypeId;
     private Integer petCountryId;
+    private Integer userId;
 }
