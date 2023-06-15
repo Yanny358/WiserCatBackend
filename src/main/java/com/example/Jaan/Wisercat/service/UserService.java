@@ -5,23 +5,19 @@ import com.example.Jaan.Wisercat.dto.UserDtoOut;
 import com.example.Jaan.Wisercat.entity.User;
 import com.example.Jaan.Wisercat.mapper.Mapper;
 import com.example.Jaan.Wisercat.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
+@AllArgsConstructor
 public class UserService {
 
-    @Autowired
     private UserRepository userRepository;
 
-    @Autowired
     private Mapper mapper;
 
-    public void addUser(User user) {
-       userRepository.save(user);
-    }
 
     public User getValidUser(String username, String password) {
         Optional<User> userOptional = userRepository.findUserByUsernameAndPassword(username, password);

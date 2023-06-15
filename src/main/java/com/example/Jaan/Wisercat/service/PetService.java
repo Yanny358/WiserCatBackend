@@ -6,19 +6,18 @@ import com.example.Jaan.Wisercat.entity.Pet;
 import com.example.Jaan.Wisercat.mapper.Mapper;
 import com.example.Jaan.Wisercat.repository.PetRepository;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class PetService {
-
-    @Autowired
-    private PetRepository petRepository;
-
-    @Autowired
-    private Mapper mapper;
+    
+    private final PetRepository petRepository;
+    
+    private final Mapper mapper;
 
     public List<PetDtoOut> getPets() {
         List<Pet> pet = petRepository.findAll();

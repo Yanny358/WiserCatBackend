@@ -19,10 +19,10 @@ public interface PetRepository extends JpaRepository<Pet, Integer> {
     @Query("update Pet p set p.name = ?1, p.petColor = ?2, p.petCountry = ?3, p.petType = ?4 where p.code = ?5")
     void updatePetByCode(String name, PetColor petColor, PetCountry petCountry, PetType petType, String code);
 
-    @Query("select p from Pet p where p.code = ?1")
+    //@Query("select p from Pet p where p.code = ?1")
     Pet findPetByCode(String code);
 
-    @Query("select p from Pet p where p.user.id = ?1")
+    //@Query("select p from Pet p where p.user.id = ?1")
     List<Pet> findByUserId(Integer id);
 
 }

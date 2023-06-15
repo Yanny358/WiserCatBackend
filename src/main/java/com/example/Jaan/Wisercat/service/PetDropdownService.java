@@ -6,20 +6,19 @@ import com.example.Jaan.Wisercat.entity.PetType;
 import com.example.Jaan.Wisercat.repository.PetColorRepository;
 import com.example.Jaan.Wisercat.repository.PetCountryRepository;
 import com.example.Jaan.Wisercat.repository.PetTypeRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class PetDropdownService {
-    @Autowired
+    
     private PetColorRepository petColorRepository;
-
-    @Autowired
+    
     private PetCountryRepository petCountryRepository;
-
-    @Autowired
+    
     private PetTypeRepository petTypeRepository;
 
     public List<PetColor> getAllColors() {
